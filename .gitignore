@@ -1,0 +1,13 @@
+/.deps/
+/build/
+/build-*/
+/dist/
+/package/
+/.cache/
+/CMakeUserPresets.json
+*.o
+*.a
+*.so
+*.dll
+*.exe
+.DS_Store
