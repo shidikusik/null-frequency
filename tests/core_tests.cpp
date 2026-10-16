@@ -20,8 +20,8 @@ float distance(nf::Vec3 a,nf::Vec3 b) { return std::hypot(a.x-b.x,a.z-b.z); }
 void connectivity() {
     nf::Game game;
     constexpr int nx=79,nz=147,total=nx*nz;
-    auto point=[](int i) -> nf::Vec3 { return {-9.75f+(i%nx)*.25f,0,-22.75f+(i/nx)*.25f}; };
-    auto index=[](nf::Vec3 p) {
+    auto point=[=](int i) -> nf::Vec3 { return {-9.75f+(i%nx)*.25f,0,-22.75f+(i/nx)*.25f}; };
+    auto index=[=](nf::Vec3 p) {
         return static_cast<int>(std::lround((p.z+22.75f)*4))*nx+
                static_cast<int>(std::lround((p.x+9.75f)*4));
     };

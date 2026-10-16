@@ -167,8 +167,8 @@ Vec3 Game::pathDirection(Vec3 from,Vec3 target) const {
     if(direct) return normalized({target.x-from.x,0,target.z-from.z});
 
     constexpr int nx=39,nz=73,total=nx*nz;
-    auto point=[](int index) -> Vec3 { return {-9.5f+(index%nx)*.5f,0,-22.5f+(index/nx)*.5f}; };
-    auto index=[](Vec3 p) {
+    auto point=[=](int index) -> Vec3 { return {-9.5f+(index%nx)*.5f,0,-22.5f+(index/nx)*.5f}; };
+    auto index=[=](Vec3 p) {
         int x=std::clamp(static_cast<int>(std::round((p.x+9.5f)*2)),0,nx-1);
         int z=std::clamp(static_cast<int>(std::round((p.z+22.5f)*2)),0,nz-1);
         return z*nx+x;
