@@ -22,6 +22,7 @@ cp -R assets "$STAGE/assets"
 cp .deps/raylib/LICENSE "$STAGE/licenses/raylib-LICENSE.txt"
 cp .deps/raylib/src/external/glfw/LICENSE.md "$STAGE/licenses/GLFW-LICENSE.txt"
 if [[ -f docs/screenshot.png ]]; then cp docs/screenshot.png "$STAGE/docs/"; fi
+if [[ -f docs/weapon-animation.mp4 ]]; then cp docs/weapon-animation.mp4 "$STAGE/docs/"; fi
 tar -czf "dist/$NAME.tar.gz" -C dist "$NAME"
 (cd dist && sha256sum "$NAME.tar.gz" > "$NAME.tar.gz.sha256")
 printf 'Package: %s/dist/%s.tar.gz\n' "$PWD" "$NAME"
